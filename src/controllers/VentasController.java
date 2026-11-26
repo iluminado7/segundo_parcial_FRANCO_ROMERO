@@ -105,8 +105,8 @@ public class VentasController {
         
         // --- Validacion de stock ---
         if (yaEnCarrito + cantidad > seleccionado.getStock()) {
-            lblMensaje.setText("Stock insuficiente de " + seleccionado.getNombre()
-                    + " (disponible: " + (seleccionado.getStock() - yaEnCarrito) + ")");
+            lblMensaje.setText("Lo sentimos, " + seleccionado.getNombre() + " no se encunetra con esa cantidad de Stock."
+                    + "\n(Stock disponible: " + (seleccionado.getStock() - yaEnCarrito) + ")");
             return;
         }
 
