@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package persistencia;
 
 import java.io.File;
@@ -46,7 +50,7 @@ public class GestorProductos {
         File archivo = new File(ARCHIVO);
 
         if (!archivo.exists()) {
-            throw new FileNotFoundException("No se encontro " + ARCHIVO);
+            throw new FileNotFoundException("No se encontro el archivo" + ARCHIVO);
         }
 
         ObjectInputStream ois = null;

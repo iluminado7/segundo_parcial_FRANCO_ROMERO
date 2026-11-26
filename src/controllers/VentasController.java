@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package controllers;
 
 import java.util.ArrayList;
@@ -65,7 +69,7 @@ public class VentasController {
 
         } catch (Exception e) {
             productos = new ArrayList<Producto>();
-            lblMensaje.setText("Error al leer el archivo de productos");
+            lblMensaje.setText("Error al leer el archivo con los productos");
         }
     }
 
@@ -82,7 +86,7 @@ public class VentasController {
 
 
         int cantidad;
-
+// --- Validacion de que no sea texto --
         try {
             cantidad = Integer.parseInt(txtCantidad.getText());
         } catch (NumberFormatException e) {
@@ -90,7 +94,7 @@ public class VentasController {
             return;
         }
 
-        // --- Validacion 3: cantidad mayor a 0 (lo pide el enunciado) ---
+        // --- Validacion de elegir una cantidad mayor a 0--
         if (cantidad <= 0) {
             lblMensaje.setText("La cantidad debe ser mayor a 0");
             return;
@@ -98,7 +102,8 @@ public class VentasController {
 
 
         int yaEnCarrito = carrito.cantidadDe(seleccionado);
-
+        
+        // --- Validacion de stock ---
         if (yaEnCarrito + cantidad > seleccionado.getStock()) {
             lblMensaje.setText("Stock insuficiente de " + seleccionado.getNombre()
                     + " (disponible: " + (seleccionado.getStock() - yaEnCarrito) + ")");
